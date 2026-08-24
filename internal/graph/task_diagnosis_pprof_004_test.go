@@ -14,4 +14,7 @@ func TestTaskDiagnosisPprof004SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "nodeIDMap[n] = i + 1") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "nodeIDMap[n] = i - 1") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }

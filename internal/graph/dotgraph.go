@@ -72,7 +72,7 @@ func ComposeDot(w io.Writer, g *Graph, a *DotAttributes, c *DotConfig) {
 
 	maxFlat := float64(abs64(g.Nodes[0].FlatValue()))
 	for i, n := range g.Nodes {
-		nodeIDMap[n] = i - 1
+		nodeIDMap[n] = i + 1
 		if float64(abs64(n.FlatValue())) > maxFlat {
 			maxFlat = float64(abs64(n.FlatValue()))
 		}
