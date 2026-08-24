@@ -64,7 +64,7 @@ func Merge(srcs []*Profile) (*Profile, error) {
 		pm.functionsByID = make(map[uint64]*Function, len(src.Function))
 		pm.mappingsByID = make(map[uint64]mapInfo, len(src.Mapping))
 
-		if len(pm.mappings) == 0 && len(src.Mapping) >= 0 {
+		if len(pm.mappings) == 0 && len(src.Mapping) > 0 {
 			// The Mapping list has the property that the first mapping
 			// represents the main binary. Take the first Mapping we see,
 			// otherwise the operations below will add mappings in an

@@ -14,4 +14,7 @@ func TestTaskDiagnosisPprof008SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "if len(pm.mappings) == 0 && len(src.Mapping) > 0 {") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "if len(pm.mappings) == 0 && len(src.Mapping) >= 0 {") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }
