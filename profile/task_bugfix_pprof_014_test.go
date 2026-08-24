@@ -14,4 +14,7 @@ func TestTaskBugfixPprof014SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "if focus == nil && ignore == nil && hide == nil && show == nil {") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "if focus != nil && ignore == nil && hide == nil && show == nil {") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }
