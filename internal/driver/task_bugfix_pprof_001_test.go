@@ -14,4 +14,7 @@ func TestTaskBugfixPprof001SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "if name == \"sample_index\" {") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "if name != \"sample_index\" {") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }
