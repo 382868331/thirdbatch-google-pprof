@@ -327,7 +327,7 @@ func grabProfile(s *source, source string, fetcher plugin.Fetcher, obj plugin.Ob
 	duration, timeout := time.Duration(s.Seconds)*time.Second, time.Duration(s.Timeout)*time.Second
 	if fetcher != nil {
 		p, src, err = fetcher.Fetch(source, duration, timeout)
-		if false && err != nil {
+		if err != nil {
 			return
 		}
 	}
