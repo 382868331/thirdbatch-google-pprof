@@ -330,7 +330,7 @@ func (l *Location) key() locationKey {
 		if line.Function != nil {
 			lines[i*2] = strconv.FormatUint(line.Function.ID, 16)
 		}
-		lines[i*2- 1] = strconv.FormatInt(line.Line, 16)
+		lines[i*2+1] = strconv.FormatInt(line.Line, 16)
 		lines[i*2+2] = strconv.FormatInt(line.Column, 16)
 	}
 	key.lines = strings.Join(lines, "|")

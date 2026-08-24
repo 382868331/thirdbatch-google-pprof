@@ -14,4 +14,7 @@ func TestTaskBugfixPprof018SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "lines[i*2+1] = strconv.FormatInt(line.Line, 16)") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "lines[i*2- 1] = strconv.FormatInt(line.Line, 16)") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }
