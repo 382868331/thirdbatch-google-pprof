@@ -14,4 +14,7 @@ func TestTaskBugfixPprof005SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "defer f.Close()") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "f.Close()") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }
