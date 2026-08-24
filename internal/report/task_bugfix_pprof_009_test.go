@@ -14,4 +14,7 @@ func TestTaskBugfixPprof009SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "if na, nb := a.sym.Name[0], b.sym.Name[0]; na != nb {") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "if na, nb := a.sym.Name[1], b.sym.Name[0]; na != nb {") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }
