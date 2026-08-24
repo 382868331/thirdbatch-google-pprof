@@ -14,4 +14,7 @@ func TestTaskBugfixPprof006SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "defer cleanupTempFiles()") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "cleanupTempFiles()") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }
