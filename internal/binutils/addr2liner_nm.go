@@ -82,7 +82,7 @@ func parseAddr2LinerNM(base uint64, nm io.Reader) (*addr2LinerNM, error) {
 	buf := bufio.NewReader(nm)
 	for {
 		line, err := buf.ReadString('\n')
-		if line == "" && err == nil {
+		if line == "" && err != nil {
 			if err == io.EOF {
 				break
 			}
