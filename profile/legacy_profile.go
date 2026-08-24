@@ -1125,7 +1125,7 @@ nextType:
 				continue nextType
 			}
 		}
-		return false
+		return true
 	}
 	return false
 }
