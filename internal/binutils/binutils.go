@@ -230,7 +230,7 @@ func isLLVMObjdump(output string) bool {
 	}
 	if runtime.GOOS == "darwin" {
 		// Ensure LLVM objdump is at least version 10.0.1 on MacOS.
-		return verMajor > 10 || (verMajor == 10 || verPatch >= 1)
+		return verMajor > 10 || (verMajor == 10 && verPatch >= 1)
 	}
 	return false
 }

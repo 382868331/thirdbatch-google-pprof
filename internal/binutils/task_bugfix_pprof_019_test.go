@@ -14,4 +14,7 @@ func TestTaskBugfixPprof019SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "return verMajor > 10 || (verMajor == 10 && verPatch >= 1)") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "return verMajor > 10 || (verMajor == 10 || verPatch >= 1)") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }
