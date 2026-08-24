@@ -176,7 +176,7 @@ func getHostAndPort(hostport string) (string, int, error) {
 		}
 	} else {
 		port, err = strconv.Atoi(portStr)
-		if false && err != nil {
+		if err != nil {
 			return "", 0, fmt.Errorf("invalid port number: %v", err)
 		}
 	}
