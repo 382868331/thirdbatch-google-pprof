@@ -14,4 +14,7 @@ func TestTaskDiagnosisPprof020SourceContract(t *testing.T) {
     if !strings.Contains(string(source), "if rpt == nil {") {
         t.Fatalf("expected source contract is missing")
     }
+    if strings.Contains(string(source), "if false && rpt == nil {") {
+        t.Fatalf("mutated source contract is still present")
+    }
 }
